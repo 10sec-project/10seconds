@@ -108,7 +108,7 @@ def download_binary(tag, args) -> int:
     platform = args.platform
     if tag < "v23" and platform in ["x86_64-apple-darwin", "arm64-apple-darwin"]:
         platform = "osx64"
-    tarball = 'bitcoin-{tag}-{platform}.tar.gz'.format(
+    tarball = 'biteducoin-{tag}-{platform}.tar.gz'.format(
         tag=tag[1:], platform=platform)
     tarballUrl = 'https://bitcoincore.org/{bin_path}/{tarball}'.format(
         bin_path=bin_path, tarball=tarball)
@@ -147,7 +147,7 @@ def download_binary(tag, args) -> int:
     # Extract tarball
     ret = subprocess.run(['tar', '-zxf', tarball, '-C', tag,
                           '--strip-components=1',
-                          'bitcoin-{tag}'.format(tag=tag[1:])]).returncode
+                          'biteducoin-{tag}'.format(tag=tag[1:])]).returncode
     if ret:
         return ret
 
@@ -156,7 +156,7 @@ def download_binary(tag, args) -> int:
 
 
 def build_release(tag, args) -> int:
-    githubUrl = "https://github.com/bitcoin/bitcoin"
+    githubUrl = "https://github.com/biteducoin/biteducoin"
     if args.remove_dir:
         if Path(tag).is_dir():
             shutil.rmtree(tag)
@@ -200,7 +200,7 @@ def build_release(tag, args) -> int:
         # Move binaries, so they're in the same place as in the
         # release download
         Path('bin').mkdir(exist_ok=True)
-        files = ['bitcoind', 'bitcoin-cli', 'bitcoin-tx']
+        files = ['biteducoind', 'biteducoin-cli', 'biteducoin-tx']
         for f in files:
             Path('src/'+f).rename('bin/'+f)
     return 0

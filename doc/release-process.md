@@ -105,7 +105,7 @@ Generate list of authors:
 Checkout the Bitcoin Core version you'd like to build:
 
 ```sh
-pushd ./bitcoin
+pushd ./biteducoin
 SIGNER='(your builder key, ie bluematt, sipa, etc)'
 VERSION='(new version without v-prefix, e.g. 0.20.0)'
 git fetch origin "v${VERSION}"
@@ -151,14 +151,14 @@ popd
 
 ### macOS codesigner only: Create detached macOS signatures (assuming [signapple](https://github.com/achow101/signapple/) is installed and up to date with master branch)
 
-    tar xf bitcoin-osx-unsigned.tar.gz
+    tar xf biteducoin-osx-unsigned.tar.gz
     ./detached-sig-create.sh /path/to/codesign.p12
     Enter the keychain password and authorize the signature
     signature-osx.tar.gz will be created
 
 ### Windows codesigner only: Create detached Windows signatures
 
-    tar xf bitcoin-win-unsigned.tar.gz
+    tar xf biteducoin-win-unsigned.tar.gz
     ./detached-sig-create.sh -key /path/to/codesign.key
     Enter the passphrase for the key when prompted
     signature-win.tar.gz will be created
@@ -185,7 +185,7 @@ popd
 ### Non-codesigners: wait for Windows and macOS detached signatures
 
 - Once the Windows and macOS builds each have 3 matching signatures, they will be signed with their respective release keys.
-- Detached signatures will then be committed to the [bitcoin-detached-sigs](https://github.com/bitcoin-core/bitcoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
+- Detached signatures will then be committed to the [biteducoin-detached-sigs](https://github.com/bitcoin-core/bitcoin-detached-sigs) repository, which can be combined with the unsigned apps to create signed binaries.
 
 ### Create the codesigned build outputs
 
@@ -228,7 +228,7 @@ cat "$VERSION"/*/all.SHA256SUMS.asc > SHA256SUMS.asc
        for troubleshooting by developers. It is assumed that anyone that is
        interested in debugging can run guix to generate the files for
        themselves. To avoid end-user confusion about which file to pick, as well
-       as save storage space *do not upload these to the bitcoincore.org server,
+       as save storage space *do not upload these to the biteducoincore.org server,
        nor put them in the torrent*.
 
        ```sh

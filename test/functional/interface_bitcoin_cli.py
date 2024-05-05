@@ -79,7 +79,7 @@ class TestBitcoinCli(BitcoinTestFramework):
         """Main test logic"""
         self.generate(self.nodes[0], BLOCKS)
 
-        self.log.info("Compare responses from getblockchaininfo RPC and `bitcoin-cli getblockchaininfo`")
+        self.log.info("Compare responses from getblockchaininfo RPC and `biteducoin-cli getblockchaininfo`")
         cli_response = self.nodes[0].cli.getblockchaininfo()
         rpc_response = self.nodes[0].getblockchaininfo()
         assert_equal(cli_response, rpc_response)
