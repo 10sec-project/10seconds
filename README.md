@@ -1,7 +1,6 @@
 Bitcoin Core source tree
 =====================================
 
-https://www.biteducoin.com
 https://github.com/biteducoin/biteducoin.git
 
 What is Biteducoin?
