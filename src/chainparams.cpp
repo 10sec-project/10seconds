@@ -120,8 +120,10 @@ public:
         // This is fine at runtime as we'll fall back to using them as an addrfetch if they don't support the
         // service bits we want, but we should get them updated to support all service bits wanted by any
         // release ASAP to avoid it where possible.
-        vSeeds.emplace_back("dnsseed.addblock-node-a.org");
-        vSeeds.emplace_back("dnsseed.addblock-node-b.org");
+        vSeeds.emplace_back("dnsseed.addblock-node-a.org"); // Primary DNS Seeds
+        vSeeds.emplace_back("dnsseed.addblock-node-b.org"); // Primary DNS Seeds
+        vSeeds.emplace_back("dnsseed.addblockpool.org"); // Sub-DNS seeds such as soft fork
+        vSeeds.emplace_back("dnsseed.addblocktools.org"); // Sub-DNS seeds such as soft fork
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,25);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,5);
@@ -131,7 +133,7 @@ public:
 
         bech32_hrp = "btec";
 
-        vSeeds.clear();
+        vFixedSeeds.clear();
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = true;
@@ -211,11 +213,8 @@ public:
         assert(consensus.hashGenesisBlock == uint256S("0x000000392e9986c0cecebe3817d192cef08978f47468b3d56454ff4b031b4623"));
         assert(genesis.hashMerkleRoot == uint256S("0x99d06761e50120eb01f74df076f876ff9492f3a5fe86fde8f8ac61f001c59e3a"));
 
-        vFixedSeeds.clear();
+        // TestNet DNS seeds are not yet available.
         vSeeds.clear();
-        // nodes with support for servicebits filtering should be at the top
-        vSeeds.emplace_back("dnsseed.addblockpool.org");
-        vSeeds.emplace_back("dnsseed.addblocktools.org");
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1,111);
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1,196);
@@ -225,7 +224,7 @@ public:
 
         bech32_hrp = "tb";
 
-        vSeeds.clear();
+        vFixedSeeds.clear();
 
         fDefaultConsistencyChecks = false;
         fRequireStandard = false;
