@@ -2,7 +2,7 @@
 
 Updated for NetBSD [9.2](https://netbsd.org/releases/formal-9/NetBSD-9.2.html).
 
-This guide describes how to build biteducoind, command-line utilities, and GUI on NetBSD.
+This guide describes how to build 10secondsd, command-line utilities, and GUI on NetBSD.
 
 ## Preparation
 
@@ -39,7 +39,7 @@ See [dependencies.md](dependencies.md) for a complete overview.
 Clone the Bitcoin Core repository to a directory. All build scripts and commands will run from this directory.
 
 ```bash
-git clone https://github.com/biteducoin/biteducoin.git
+git clone https://github.com/10seconds/10seconds.git
 ```
 
 ### 3. Install Optional Dependencies
@@ -87,7 +87,7 @@ To run the test suite (recommended), you will need to have Python 3 installed:
 pkgin install python37
 ```
 
-### Building Biteducoin Core
+### Building 10Seconds Core
 
 **Note**: Use `gmake` (the non-GNU `make` will exit with an error).
 

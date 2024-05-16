@@ -970,7 +970,7 @@ void SendCoinsDialog::coinControlChangeEdited(const QString& text)
         }
         else if (!IsValidDestination(dest)) // Invalid address
         {
-            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid Biteducoin address"));
+            ui->labelCoinControlChangeLabel->setText(tr("Warning: Invalid 10Seconds address"));
         }
         else // Valid address
         {

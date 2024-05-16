@@ -59,17 +59,17 @@ static bool WalletAppInit(ArgsManager& args, int argc, char* argv[])
         return false;
     }
     if (argc < 2 || HelpRequested(args) || args.IsArgSet("-version")) {
-        std::string strUsage = strprintf("%s biteducoin-wallet version", PACKAGE_NAME) + " " + FormatFullVersion() + "\n";
+        std::string strUsage = strprintf("%s 10seconds-wallet version", PACKAGE_NAME) + " " + FormatFullVersion() + "\n";
 
         if (args.IsArgSet("-version")) {
             strUsage += FormatParagraph(LicenseInfo());
         } else {
             strUsage += "\n"
-                        "biteducoin-wallet is an offline tool for creating and interacting with " PACKAGE_NAME " wallet files.\n"
-                        "By default biteducoin-wallet will act on wallets in the default mainnet wallet directory in the datadir.\n"
+                        "10seconds-wallet is an offline tool for creating and interacting with " PACKAGE_NAME " wallet files.\n"
+                        "By default 10seconds-wallet will act on wallets in the default mainnet wallet directory in the datadir.\n"
                         "To change the target wallet, use the -datadir, -wallet and -regtest/-signet/-testnet arguments.\n\n"
                         "Usage:\n"
-                        "  biteducoin-wallet [options] <command>\n";
+                        "  10seconds-wallet [options] <command>\n";
             strUsage += "\n" + args.GetHelpMessage();
         }
         tfm::format(std::cout, "%s", strUsage);
@@ -117,7 +117,7 @@ MAIN_FUNCTION
 
     const auto command = args.GetCommand();
     if (!command) {
-        tfm::format(std::cerr, "No method provided. Run `biteducoin-wallet -help` for valid methods.\n");
+        tfm::format(std::cerr, "No method provided. Run `10seconds-wallet -help` for valid methods.\n");
         return EXIT_FAILURE;
     }
     if (command->args.size() != 0) {

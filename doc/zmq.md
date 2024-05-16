@@ -5,8 +5,8 @@ connections, inter-process communication, and shared-memory,
 providing various message-oriented semantics such as publish/subscribe,
 request/reply, and push/pull.
 
-The Biteducoin Core daemon can be configured to act as a trusted "border
-router", implementing the biteducoin wire protocol and relay, making
+The 10Seconds Core daemon can be configured to act as a trusted "border
+router", implementing the 10seconds wire protocol and relay, making
 consensus decisions, maintaining the local blockchain database,
 broadcasting locally generated transactions into the network, and
 providing a queryable RPC interface to interact on a polled basis for
@@ -33,7 +33,7 @@ buffering or reassembly.
 
 ## Prerequisites
 
-The ZeroMQ feature in Biteducoin Core requires the ZeroMQ API >= 4.0.0
+The ZeroMQ feature in 10Seconds Core requires the ZeroMQ API >= 4.0.0
 [libzmq](https://github.com/zeromq/libzmq/releases).
 For version information, see [dependencies.md](dependencies.md).
 Typically, it is packaged by distributions as something like
@@ -48,7 +48,7 @@ operation.
 
 By default, the ZeroMQ feature is automatically compiled in if the
 necessary prerequisites are found.  To disable, use --disable-zmq
-during the *configure* step of building biteducoind:
+during the *configure* step of building 10secondsd:
 
     $ ./configure --disable-zmq (other options)
 
@@ -82,16 +82,16 @@ The high water mark value must be an integer greater than or equal to 0.
 
 For instance:
 
-    $ biteducoind -zmqpubhashtx=tcp://127.0.0.1:29470 \
+    $ 10secondsd -zmqpubhashtx=tcp://127.0.0.1:29470 \
                -zmqpubhashtx=tcp://192.168.1.2:29470 \
                -zmqpubhashblock="tcp://[::1]:29471" \
-               -zmqpubrawtx=ipc:///tmp/biteducoind.tx.raw \
+               -zmqpubrawtx=ipc:///tmp/10secondsd.tx.raw \
                -zmqpubhashtxhwm=10000
 
 Each PUB notification has a topic and body, where the header
 corresponds to the notification type. For instance, for the
 notification `-zmqpubhashtx` the topic is `hashtx` (no null
-terminator). These options can also be provided in biteducoin.conf.
+terminator). These options can also be provided in 10seconds.conf.
 
 The topics are:
 
@@ -150,9 +150,9 @@ hosts as well. If needed, this option has to be set on the client side too.
 
 ## Remarks
 
-From the perspective of biteducoind, the ZeroMQ socket is write-only; PUB
+From the perspective of 10secondsd, the ZeroMQ socket is write-only; PUB
 sockets don't even have a read function. Thus, there is no state
-introduced into biteducoind directly. Furthermore, no information is
+introduced into 10secondsd directly. Furthermore, no information is
 broadcast that wasn't already received from the public P2P network.
 
 No authentication or authorization is done on connecting clients; it
@@ -169,7 +169,7 @@ disconnections.
 
 There are several possibilities that ZMQ notification can get lost
 during transmission depending on the communication type you are
-using. Biteducoind appends an up-counting sequence number to each
+using. 10Secondsd appends an up-counting sequence number to each
 notification which allows listeners to detect lost notifications.
 
 The `sequence` topic refers specifically to the mempool sequence

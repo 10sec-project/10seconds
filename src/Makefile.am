@@ -84,33 +84,33 @@ EXTRA_LIBRARIES += \
   $(LIBBITCOIN_ZMQ)
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += biteducoind
+  bin_PROGRAMS += 10secondsd
 endif
 
 if BUILD_BITCOIN_NODE
-  bin_PROGRAMS += biteducoin-node
+  bin_PROGRAMS += 10seconds-node
 endif
 
 if BUILD_BITCOIN_CLI
-  bin_PROGRAMS += biteducoin-cli
+  bin_PROGRAMS += 10seconds-cli
 endif
 
 if BUILD_BITCOIN_TX
-  bin_PROGRAMS += biteducoin-tx
+  bin_PROGRAMS += 10seconds-tx
 endif
 
 if ENABLE_WALLET
 if BUILD_BITCOIN_WALLET
-  bin_PROGRAMS += biteducoin-wallet
+  bin_PROGRAMS += 10seconds-wallet
 endif
 endif
 
 if BUILD_BITCOIN_UTIL
-  bin_PROGRAMS += biteducoin-util
+  bin_PROGRAMS += 10seconds-util
 endif
 
 if BUILD_BITCOIN_CHAINSTATE
-  bin_PROGRAMS += biteducoin-chainstate
+  bin_PROGRAMS += 10seconds-chainstate
 endif
 
 .PHONY: FORCE check-symbols check-security
@@ -716,16 +716,16 @@ nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
 # bitcoind & bitcoin-node binaries #
-biteducoin_daemon_sources = bitcoind.cpp
-biteducoin_bin_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-biteducoin_bin_cxxflags = $(AM_CXXFLAGS) $(PIE_FLAGS)
-biteducoin_bin_ldflags = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+10seconds_daemon_sources = bitcoind.cpp
+10seconds_bin_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+10seconds_bin_cxxflags = $(AM_CXXFLAGS) $(PIE_FLAGS)
+10seconds_bin_ldflags = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-biteducoin_daemon_sources += bitcoind-res.rc
+10seconds_daemon_sources += bitcoind-res.rc
 endif
 
-biteducoin_bin_ldadd = \
+10seconds_bin_ldadd = \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -737,50 +737,50 @@ biteducoin_bin_ldadd = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-biteducoin_bin_ldadd += $(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(SQLITE_LIBS)
+10seconds_bin_ldadd += $(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS) $(SQLITE_LIBS)
 
-biteducoind_SOURCES = $(biteducoin_daemon_sources) init/bitcoind.cpp
-biteducoind_CPPFLAGS = $(biteducoin_bin_cppflags)
-biteducoind_CXXFLAGS = $(biteducoin_bin_cxxflags)
-biteducoind_LDFLAGS = $(biteducoin_bin_ldflags)
-biteducoind_LDADD = $(LIBBITCOIN_NODE) $(biteducoin_bin_ldadd)
+10secondsd_SOURCES = $(10seconds_daemon_sources) init/bitcoind.cpp
+10secondsd_CPPFLAGS = $(10seconds_bin_cppflags)
+10secondsd_CXXFLAGS = $(10seconds_bin_cxxflags)
+10secondsd_LDFLAGS = $(10seconds_bin_ldflags)
+10secondsd_LDADD = $(LIBBITCOIN_NODE) $(10seconds_bin_ldadd)
 
-biteducoin_node_SOURCES = $(biteducoin_daemon_sources) init/bitcoin-node.cpp
-biteducoin_node_CPPFLAGS = $(biteducoin_bin_cppflags)
-biteducoin_node_CXXFLAGS = $(biteducoin_bin_cxxflags)
-biteducoin_node_LDFLAGS = $(biteducoin_bin_ldflags)
-biteducoin_node_LDADD = $(LIBBITCOIN_NODE) $(bitcoin_bin_ldadd) $(LIBBITCOIN_IPC) $(LIBMULTIPROCESS_LIBS)
+10seconds_node_SOURCES = $(10seconds_daemon_sources) init/bitcoin-node.cpp
+10seconds_node_CPPFLAGS = $(10seconds_bin_cppflags)
+10seconds_node_CXXFLAGS = $(10seconds_bin_cxxflags)
+10seconds_node_LDFLAGS = $(10seconds_bin_ldflags)
+10seconds_node_LDADD = $(LIBBITCOIN_NODE) $(bitcoin_bin_ldadd) $(LIBBITCOIN_IPC) $(LIBMULTIPROCESS_LIBS)
 
 # bitcoin-cli binary #
-biteducoin_cli_SOURCES = bitcoin-cli.cpp
-biteducoin_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-biteducoin_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-biteducoin_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+10seconds_cli_SOURCES = bitcoin-cli.cpp
+10seconds_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+10seconds_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+10seconds_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-biteducoin_cli_SOURCES += bitcoin-cli-res.rc
+10seconds_cli_SOURCES += bitcoin-cli-res.rc
 endif
 
-biteducoin_cli_LDADD = \
+10seconds_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-biteducoin_cli_LDADD += $(EVENT_LIBS)
+10seconds_cli_LDADD += $(EVENT_LIBS)
 #
 
 # bitcoin-tx binary #
-biteducoin_tx_SOURCES = bitcoin-tx.cpp
-biteducoin_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-biteducoin_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-biteducoin_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+10seconds_tx_SOURCES = bitcoin-tx.cpp
+10seconds_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+10seconds_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+10seconds_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-biteducoin_tx_SOURCES += bitcoin-tx-res.rc
+10seconds_tx_SOURCES += bitcoin-tx-res.rc
 endif
 
-biteducoin_tx_LDADD = \
+10seconds_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
@@ -790,12 +790,12 @@ biteducoin_tx_LDADD = \
 #
 
 # bitcoin-wallet binary #
-biteducoin_wallet_SOURCES = bitcoin-wallet.cpp
-biteducoin_wallet_SOURCES += init/bitcoin-wallet.cpp
-biteducoin_wallet_CPPFLAGS = $(biteducoin_bin_cppflags)
-biteducoin_wallet_CXXFLAGS = $(biteducoin_bin_cxxflags)
-biteducoin_wallet_LDFLAGS = $(biteducoin_bin_ldflags)
-biteducoin_wallet_LDADD = \
+10seconds_wallet_SOURCES = bitcoin-wallet.cpp
+10seconds_wallet_SOURCES += init/bitcoin-wallet.cpp
+10seconds_wallet_CPPFLAGS = $(10seconds_bin_cppflags)
+10seconds_wallet_CXXFLAGS = $(10seconds_bin_cxxflags)
+10seconds_wallet_LDFLAGS = $(10seconds_bin_ldflags)
+10seconds_wallet_LDADD = \
   $(LIBBITCOIN_WALLET_TOOL) \
   $(LIBBITCOIN_WALLET) \
   $(LIBBITCOIN_COMMON) \
@@ -808,21 +808,21 @@ biteducoin_wallet_LDADD = \
   $(SQLITE_LIBS)
 
 if TARGET_WINDOWS
-biteducoin_wallet_SOURCES += bitcoin-wallet-res.rc
+10seconds_wallet_SOURCES += bitcoin-wallet-res.rc
 endif
 #
 
 # bitcoin-util binary #
-biteducoin_util_SOURCES = bitcoin-util.cpp
-biteducoin_util_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-biteducoin_util_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-biteducoin_util_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+10seconds_util_SOURCES = bitcoin-util.cpp
+10seconds_util_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+10seconds_util_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+10seconds_util_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
 
 if TARGET_WINDOWS
-biteducoin_util_SOURCES += bitcoin-util-res.rc
+10seconds_util_SOURCES += bitcoin-util-res.rc
 endif
 
-biteducoin_util_LDADD = \
+10seconds_util_LDADD = \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_UTIL) \
   $(LIBUNIVALUE) \
@@ -832,15 +832,15 @@ biteducoin_util_LDADD = \
 #
 
 # bitcoin-chainstate binary #
-biteducoin_chainstate_SOURCES = bitcoin-chainstate.cpp
-biteducoin_chainstate_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS)
-biteducoin_chainstate_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+10seconds_chainstate_SOURCES = bitcoin-chainstate.cpp
+10seconds_chainstate_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BOOST_CPPFLAGS)
+10seconds_chainstate_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 
 # $(LIBTOOL_APP_LDFLAGS) deliberately omitted here so that we can test linking
 # bitcoin-chainstate against libbitcoinkernel as a shared or static library by
 # setting --{en,dis}able-shared.
-biteducoin_chainstate_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(PTHREAD_FLAGS)
-biteducoin_chainstate_LDADD = $(LIBBITCOINKERNEL)
+10seconds_chainstate_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(PTHREAD_FLAGS)
+10seconds_chainstate_LDADD = $(LIBBITCOINKERNEL)
 #
 
 # bitcoinkernel library #

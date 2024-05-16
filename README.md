@@ -1,12 +1,12 @@
 Bitcoin Core source tree
 =====================================
 
-https://github.com/biteducoin/biteducoin.git
+https://github.com/10seconds/10seconds.git
 
-What is Biteducoin?
+What is 10Seconds?
 -------------------
 
-Biteducoin is an experimental digital currency that anyone, from elementary school students to senior citizens, can have and use. The experience of using digital currency from a young age will break barriers to entry into the rapidly changing modern society. We hope that Biteducoin will serve as an educational guide for you to move into the world of digital currency.
+10Seconds is an experimental digital currency that anyone, from elementary school students to senior citizens, can have and use. The experience of using digital currency from a young age will break barriers to entry into the rapidly changing modern society. We hope that 10Seconds will serve as an educational guide for you to move into the world of digital currency.
 
 What is Bitcoin Core?
 ---------------------
@@ -18,12 +18,12 @@ Further information about Bitcoin Core is available in the [doc folder](/doc).
 License
 -------
 
-Biteducoin Core is released under the terms of the MIT license. See [COPYING](COPYING) for more information or see https://opensource.org/licenses/MIT.
+10Seconds Core is released under the terms of the MIT license. See [COPYING](COPYING) for more information or see https://opensource.org/licenses/MIT.
 
 Development Process
 -------------------
 
-The `master` branch is regularly built (see `doc/build-*.md` for instructions) and tested, but it is not guaranteed to be completely stable. [Tags](https://github.com/biteducoin/biteducoin/tags) are created regularly from release branches to indicate new official, stable release versions of Biteducoin Core.
+The `master` branch is regularly built (see `doc/build-*.md` for instructions) and tested, but it is not guaranteed to be completely stable. [Tags](https://github.com/10seconds/10seconds/tags) are created regularly from release branches to indicate new official, stable release versions of 10Seconds Core.
 
 The https://github.com/bitcoin-core/gui repository is used exclusively for the
 development of the GUI. Its master branch is identical in all monotree

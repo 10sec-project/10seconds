@@ -82,16 +82,16 @@ std::string CopyrightHolders(const std::string& strPrefix)
     const auto copyright_devs = strprintf(_(COPYRIGHT_HOLDERS).translated, COPYRIGHT_HOLDERS_SUBSTITUTION);
     std::string strCopyrightHolders = strPrefix + copyright_devs;
 
-    // Make sure Biteducoin Core copyright is not removed by accident
-    if (copyright_devs.find("Biteducoin Core") == std::string::npos) {
-        strCopyrightHolders += "\n" + strPrefix + "The Biteducoin Core developers";
+    // Make sure 10Seconds Core copyright is not removed by accident
+    if (copyright_devs.find("10Seconds Core") == std::string::npos) {
+        strCopyrightHolders += "\n" + strPrefix + "The 10Seconds Core developers";
     }
     return strCopyrightHolders;
 }
 
 std::string LicenseInfo()
 {
-    const std::string URL_SOURCE_CODE = "<https://github.com/biteducoin/biteducoin>";
+    const std::string URL_SOURCE_CODE = "<https://github.com/10seconds/10seconds>";
 
     return CopyrightHolders(strprintf(_("Copyright (C) %i-%i").translated, 2009, COPYRIGHT_YEAR) + " ") + "\n" +
            "\n" +

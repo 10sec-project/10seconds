@@ -2,10 +2,10 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += qt/biteducoin-qt
+bin_PROGRAMS += qt/10seconds-qt
 
 if BUILD_BITCOIN_GUI
-  bin_PROGRAMS += biteducoin-gui
+  bin_PROGRAMS += 10seconds-gui
 endif
 
 EXTRA_LIBRARIES += qt/libbitcoinqt.a
@@ -316,40 +316,40 @@ $(QT_MOC): $(QT_FORMS_H)
 $(qt_libbitcoinqt_a_OBJECTS) $(qt_bitcoin_qt_OBJECTS) $(bitcoin_gui_OBJECTS) : | $(QT_MOC)
 
 # bitcoin-qt and bitcoin-gui binaries #
-biteducoin_qt_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+10seconds_qt_cppflags = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(QR_CFLAGS)
-biteducoin_qt_cxxflags = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+10seconds_qt_cxxflags = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-biteducoin_qt_sources = qt/main.cpp
+10seconds_qt_sources = qt/main.cpp
 if TARGET_WINDOWS
-  biteducoin_qt_sources += $(BITCOIN_QT_RC)
+  10seconds_qt_sources += $(BITCOIN_QT_RC)
 endif
-biteducoin_qt_ldadd = qt/libbitcoinqt.a $(LIBBITCOIN_NODE)
+10seconds_qt_ldadd = qt/libbitcoinqt.a $(LIBBITCOIN_NODE)
 if ENABLE_WALLET
-biteducoin_qt_ldadd += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
+10seconds_qt_ldadd += $(LIBBITCOIN_UTIL) $(LIBBITCOIN_WALLET)
 endif
 if ENABLE_ZMQ
-biteducoin_qt_ldadd += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+10seconds_qt_ldadd += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
-biteducoin_qt_ldadd += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
+10seconds_qt_ldadd += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CONSENSUS) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBLEVELDB) $(LIBMEMENV) \
   $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(BDB_LIBS) $(MINIUPNPC_LIBS) $(NATPMP_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(SQLITE_LIBS)
-biteducoin_qt_ldflags = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
-biteducoin_qt_libtoolflags = $(AM_LIBTOOLFLAGS) --tag CXX
+10seconds_qt_ldflags = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS) $(PTHREAD_FLAGS)
+10seconds_qt_libtoolflags = $(AM_LIBTOOLFLAGS) --tag CXX
 
-qt_biteducoin_qt_CPPFLAGS = $(biteducoin_qt_cppflags)
-qt_biteducoin_qt_CXXFLAGS = $(biteducoin_qt_cxxflags)
-qt_biteducoin_qt_SOURCES = $(biteducoin_qt_sources) init/bitcoin-qt.cpp
-qt_biteducoin_qt_LDADD = $(biteducoin_qt_ldadd)
-qt_biteducoin_qt_LDFLAGS = $(biteducoin_qt_ldflags)
-qt_biteducoin_qt_LIBTOOLFLAGS = $(biteducoin_qt_libtoolflags)
+qt_10seconds_qt_CPPFLAGS = $(10seconds_qt_cppflags)
+qt_10seconds_qt_CXXFLAGS = $(10seconds_qt_cxxflags)
+qt_10seconds_qt_SOURCES = $(10seconds_qt_sources) init/bitcoin-qt.cpp
+qt_10seconds_qt_LDADD = $(10seconds_qt_ldadd)
+qt_10seconds_qt_LDFLAGS = $(10seconds_qt_ldflags)
+qt_10seconds_qt_LIBTOOLFLAGS = $(10seconds_qt_libtoolflags)
 
-biteducoin_gui_CPPFLAGS = $(biteducoin_qt_cppflags)
-biteducoin_gui_CXXFLAGS = $(biteducoin_qt_cxxflags)
-biteducoin_gui_SOURCES = $(biteducoin_qt_sources) init/bitcoin-gui.cpp
-biteducoin_gui_LDADD = $(biteducoin_qt_ldadd) $(LIBBITCOIN_IPC) $(LIBBITCOIN_UTIL) $(LIBMULTIPROCESS_LIBS)
-biteducoin_gui_LDFLAGS = $(biteducoin_qt_ldflags)
-biteducoin_gui_LIBTOOLFLAGS = $(biteducoin_qt_libtoolflags)
+10seconds_gui_CPPFLAGS = $(10seconds_qt_cppflags)
+10seconds_gui_CXXFLAGS = $(10seconds_qt_cxxflags)
+10seconds_gui_SOURCES = $(10seconds_qt_sources) init/bitcoin-gui.cpp
+10seconds_gui_LDADD = $(10seconds_qt_ldadd) $(LIBBITCOIN_IPC) $(LIBBITCOIN_UTIL) $(LIBMULTIPROCESS_LIBS)
+10seconds_gui_LDFLAGS = $(10seconds_qt_ldflags)
+10seconds_gui_LIBTOOLFLAGS = $(10seconds_qt_libtoolflags)
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
@@ -385,9 +385,9 @@ CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda 
 CLEANFILES += $(CLEAN_QT)
 
 bitcoin_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_biteducoin_qt_OBJECTS) qt/biteducoin-qt$(EXEEXT) $(LIBBITCOINQT)
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_10seconds_qt_OBJECTS) qt/10seconds-qt$(EXEEXT) $(LIBBITCOINQT)
 
-bitcoin_qt : qt/biteducoin-qt$(EXEEXT)
+bitcoin_qt : qt/10seconds-qt$(EXEEXT)
 
 APK_LIB_DIR = qt/android/libs/$(ANDROID_ARCH)
 QT_BASE_VERSION = $(lastword $(shell $(MOC) --version))

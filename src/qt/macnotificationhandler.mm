@@ -13,7 +13,7 @@
 - (NSString *)__bundleIdentifier
 {
     if (self == [NSBundle mainBundle]) {
-        return @"org.biteducoinfoundation.biteducoin-Qt";
+        return @"org.10secondsfoundation.10seconds-Qt";
     } else {
         return [self __bundleIdentifier];
     }

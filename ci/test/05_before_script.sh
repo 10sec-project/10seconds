@@ -8,9 +8,9 @@ export LC_ALL=C.UTF-8
 
 # Make sure default datadir does not exist and is never read by creating a dummy file
 if [ "$CI_OS_NAME" == "macos" ]; then
-  echo > "${HOME}/Library/Application Support/Biteducoin"
+  echo > "${HOME}/Library/Application Support/10Seconds"
 else
-  CI_EXEC echo \> \$HOME/.biteducoin
+  CI_EXEC echo \> \$HOME/.10seconds
 fi
 
 CI_EXEC mkdir -p "${DEPENDS_DIR}/SDKs" "${DEPENDS_DIR}/sdk-sources"

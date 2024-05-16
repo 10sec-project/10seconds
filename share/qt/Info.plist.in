@@ -34,16 +34,16 @@
   <string>????</string>
 
   <key>CFBundleExecutable</key>
-  <string>Biteducoin-Qt</string>
+  <string>10Seconds-Qt</string>
 
   <key>CFBundleName</key>
-  <string>Biteducoin-Qt</string>
+  <string>10Seconds-Qt</string>
 
   <key>LSHasLocalizedDisplayName</key>
   <true/>
 
   <key>CFBundleIdentifier</key>
-  <string>org.biteducoinfoundation.Biteducoin-Qt</string>
+  <string>org.10secondsfoundation.10Seconds-Qt</string>
 
   <key>CFBundleURLTypes</key>
   <array>
@@ -51,10 +51,10 @@
       <key>CFBundleTypeRole</key>
       <string>Editor</string>
       <key>CFBundleURLName</key>
-      <string>org.biteducoin.BiteducoinPayment</string>
+      <string>org.10seconds.10SecondsPayment</string>
       <key>CFBundleURLSchemes</key>
       <array>
-        <string>biteducoin</string>
+        <string>10seconds</string>
       </array>
     </dict>
   </array>

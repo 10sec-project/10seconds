@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>Open biteducoin URI</string>
+   <string>Open 10seconds URI</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
@@ -26,7 +26,7 @@
      <item>
       <widget class="QValidatedLineEdit" name="uriEdit">
        <property name="placeholderText">
-        <string notr="true">biteducoin:</string>
+        <string notr="true">10seconds:</string>
        </property>
       </widget>
      </item>

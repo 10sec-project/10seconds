@@ -2,7 +2,7 @@
 
 **Updated for FreeBSD [12.3](https://www.freebsd.org/releases/12.3R/announce/)**
 
-This guide describes how to build biteducoind, command-line utilities, and GUI on FreeBSD.
+This guide describes how to build 10secondsd, command-line utilities, and GUI on FreeBSD.
 
 ## Preparation
 
@@ -19,13 +19,13 @@ See [dependencies.md](dependencies.md) for a complete overview.
 ### 2. Clone Bitcoin Repo
 Now that `git` and all the required dependencies are installed, let's clone the Bitcoin Core repository to a directory. All build scripts and commands will run from this directory.
 ``` bash
-git clone https://github.com/biteducoin/biteducoin.git
+git clone https://github.com/10seconds/10seconds.git
 ```
 
 ### 3. Install Optional Dependencies
 
 #### Wallet Dependencies
-It is not necessary to build wallet functionality to run either `biteducoind` or `biteducoin-qt`.
+It is not necessary to build wallet functionality to run either `10secondsd` or `10seconds-qt`.
 
 ###### Descriptor Wallet Support
 
@@ -76,7 +76,7 @@ pkg install python3
 ```
 ---
 
-## Building Biteducoin Core
+## Building 10Seconds Core
 
 ### 1. Configuration
 

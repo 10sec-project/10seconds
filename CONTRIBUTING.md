@@ -1,7 +1,7 @@
-Contributing to Biteducoin Core
+Contributing to 10Seconds Core
 ============================
 
-The Biteducoin Core project operates an open contributor model where anyone is
+The 10Seconds Core project operates an open contributor model where anyone is
 welcome to contribute towards development in the form of peer review, testing
 and patches. This document explains the practical process and guidelines for
 contributing.
@@ -24,7 +24,7 @@ as a new contributor. It also will teach you much more about the code and
 process than opening pull requests. Please refer to the [peer review](#peer-review)
 section below.
 
-Before you start contributing, familiarize yourself with the Biteducoin Core build
+Before you start contributing, familiarize yourself with the 10Seconds Core build
 system and tests. Refer to the documentation in the repository on how to build
 Bitcoin Core and how to run the unit tests, functional tests, and fuzz tests.
 
@@ -66,7 +66,7 @@ Discussion about codebase improvements happens in GitHub issues and pull
 requests.
 
 The developer
-[mailing list](https://lists.linuxfoundation.org/mailman/listinfo/biteducoin-dev)
+[mailing list](https://lists.linuxfoundation.org/mailman/listinfo/10seconds-dev)
 should be used to discuss complicated or controversial consensus or P2P protocol changes before working on
 a patch set.
 
@@ -142,7 +142,7 @@ the pull request affects. Valid areas as:
 
   - `consensus` for changes to consensus critical code
   - `doc` for changes to the documentation
-  - `qt` or `gui` for changes to biteducoin-qt
+  - `qt` or `gui` for changes to 10seconds-qt
   - `log` for changes to log messages
   - `mining` for changes to the mining code
   - `net` or `p2p` for changes to the peer-to-peer network code
@@ -289,11 +289,11 @@ workload on reviewing.
 "Decision Making" Process
 -------------------------
 
-The following applies to code changes to the Biteducoin Core project (and related
-projects such as libsecp256k1), and is not to be confused with overall Biteducoin
+The following applies to code changes to the 10Seconds Core project (and related
+projects such as libsecp256k1), and is not to be confused with overall 10Seconds
 Network Protocol consensus changes.
 
-Whether a pull request is merged into Biteducoin Core rests with the project merge
+Whether a pull request is merged into 10Seconds Core rests with the project merge
 maintainers.
 
 Maintainers will take into consideration if a patch is in line with the general
@@ -312,7 +312,7 @@ In general, all pull requests must:
     demonstrating the bug and also proving the fix. This helps prevent regression.
   - Change relevant comments and documentation when behaviour of code changes.
 
-Patches that change Biteducoin consensus rules are considerably more involved than
+Patches that change 10Seconds consensus rules are considerably more involved than
 normal because they affect the entire ecosystem and so must be preceded by
 extensive mailing list discussions and have a numbered BIP. While each case will
 be different, one should be prepared to expend more time and effort than for
@@ -373,7 +373,7 @@ higher in terms of discussion and peer review requirements, keeping in mind that
 mistakes could be very costly to the wider community. This includes refactoring
 of consensus-critical code.
 
-Where a patch set proposes to change the Biteducoin consensus, it must have been
+Where a patch set proposes to change the 10Seconds consensus, it must have been
 discussed extensively on the mailing list and IRC, be accompanied by a widely
 discussed BIP and have a generally widely perceived technical consensus of being
 a worthwhile change based on the judgement of the maintainers.

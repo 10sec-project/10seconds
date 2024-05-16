@@ -26,7 +26,7 @@ Developer Notes
     - [Threads](#threads)
     - [Ignoring IDE/editor files](#ignoring-ideeditor-files)
 - [Development guidelines](#development-guidelines)
-    - [General Biteducoin Core](#general-biteducoin-core)
+    - [General 10Seconds Core](#general-10seconds-core)
     - [Wallet](#wallet)
     - [General C++](#general-c)
     - [C++ data structures](#c-data-structures)
@@ -463,10 +463,10 @@ which includes known Valgrind warnings in our dependencies that cannot be fixed
 in-tree. Example use:
 
 ```shell
-$ valgrind --suppressions=contrib/valgrind.supp src/test/test_biteducoin
+$ valgrind --suppressions=contrib/valgrind.supp src/test/test_10seconds
 $ valgrind --suppressions=contrib/valgrind.supp --leak-check=full \
-      --show-leak-kinds=all src/test/test_biteducoin --log_level=test_suite
-$ valgrind -v --leak-check=full src/biteducoind -printtoconsole
+      --show-leak-kinds=all src/test/test_10seconds --log_level=test_suite
+$ valgrind -v --leak-check=full src/10secondsd -printtoconsole
 $ ./test/functional/test_runner.py --valgrind
 ```
 
@@ -483,7 +483,7 @@ To enable LCOV report generation during test runs:
 make
 make cov
 
-# A coverage report will now be accessible at `./test_biteducoin.coverage/index.html`.
+# A coverage report will now be accessible at `./test_10seconds.coverage/index.html`.
 ```
 
 ### Performance profiling with perf
@@ -510,13 +510,13 @@ Make sure you [understand the security
 trade-offs](https://lwn.net/Articles/420403/) of setting these kernel
 parameters.
 
-To profile a running biteducoind process for 60 seconds, you could use an
+To profile a running 10secondsd process for 60 seconds, you could use an
 invocation of `perf record` like this:
 
 ```sh
 $ perf record \
     -g --call-graph dwarf --per-thread -F 140 \
-    -p `pgrep biteducoind` -- sleep 60
+    -p `pgrep 10secondsd` -- sleep 60
 ```
 
 You could then analyze the results by running:
@@ -1187,7 +1187,7 @@ In addition to reviewing the upstream changes in `env_posix.cc`, you can use `ls
 check this. For example, on Linux this command will show open `.ldb` file counts:
 
 ```bash
-$ lsof -p $(pidof biteducoind) |\
+$ lsof -p $(pidof 10secondsd) |\
     awk 'BEGIN { fd=0; mem=0; } /ldb$/ { if ($4 == "mem") mem++; else fd++ } END { printf "mem = %s, fd = %s\n", mem, fd}'
 mem = 119, fd = 0
 ```
@@ -1328,7 +1328,7 @@ A few guidelines for introducing and reviewing new RPC interfaces:
 - Try not to overload methods on argument type. E.g. don't make `getblock(true)` and `getblock("hash")`
   do different things.
 
-  - *Rationale*: This is impossible to use with `biteducoin-cli`, and can be surprising to users.
+  - *Rationale*: This is impossible to use with `10seconds-cli`, and can be surprising to users.
 
   - *Exception*: Some RPC calls can take both an `int` and `bool`, most notably when a bool was switched
     to a multi-value, or due to other historical reasons. **Always** have false map to 0 and
@@ -1340,7 +1340,7 @@ A few guidelines for introducing and reviewing new RPC interfaces:
 
 - Add every non-string RPC argument `(method, idx, name)` to the table `vRPCConvertParams` in `rpc/client.cpp`.
 
-  - *Rationale*: `biteducoin-cli` and the GUI debug console use this table to determine how to
+  - *Rationale*: `10seconds-cli` and the GUI debug console use this table to determine how to
     convert a plaintext command line to JSON. If the types don't match, the method can be unusable
     from there.
 

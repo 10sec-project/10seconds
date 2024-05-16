@@ -2,7 +2,7 @@
 
 **Updated for MacOS [11.2](https://www.apple.com/macos/big-sur/)**
 
-This guide describes how to build biteducoind, command-line utilities, and GUI on macOS
+This guide describes how to build 10secondsd, command-line utilities, and GUI on macOS
 
 ## Preparation
 
@@ -58,14 +58,14 @@ Now that all the required dependencies are installed, let's clone the Bitcoin Co
 All build scripts and commands will run from this directory.
 
 ``` bash
-git clone https://github.com/biteducoin/biteducoin.git
+git clone https://github.com/10seconds/10seconds.git
 ```
 
 ### 5. Install Optional Dependencies
 
 #### Wallet Dependencies
 
-It is not necessary to build wallet functionality to run `biteducoind` or  `biteducoin-qt`.
+It is not necessary to build wallet functionality to run `10secondsd` or  `10seconds-qt`.
 
 ###### Descriptor Wallet Support
 
@@ -238,10 +238,10 @@ make deploy
 
 ## Running Bitcoin Core
 
-Biteducoin Core should now be available at `./src/biteducoind`.
-If you compiled support for the GUI, it should be available at `./src/qt/biteducoin-qt`.
+10Seconds Core should now be available at `./src/10secondsd`.
+If you compiled support for the GUI, it should be available at `./src/qt/10seconds-qt`.
 
-The first time you run `biteducoind` or `biteducoin-qt`, it will start downloading the blockchain.
+The first time you run `10secondsd` or `10seconds-qt`, it will start downloading the blockchain.
 This process could take many hours, or even days on slower than average systems.
 
 By default, blockchain and wallet data files will be stored in:
@@ -253,24 +253,24 @@ By default, blockchain and wallet data files will be stored in:
 Before running, you may create an empty configuration file:
 
 ```shell
-mkdir -p "/Users/${USER}/Library/Application Support/Biteducoin"
+mkdir -p "/Users/${USER}/Library/Application Support/10Seconds"
 
-touch "/Users/${USER}/Library/Application Support/Biteducoin/biteducoin.conf"
+touch "/Users/${USER}/Library/Application Support/10Seconds/10seconds.conf"
 
-chmod 600 "/Users/${USER}/Library/Application Support/Biteducoin/biteducoin.conf"
+chmod 600 "/Users/${USER}/Library/Application Support/10Seconds/10seconds.conf"
 ```
 
 You can monitor the download process by looking at the debug.log file:
 
 ```shell
-tail -f $HOME/Library/Application\ Support/Biteducoin/debug.log
+tail -f $HOME/Library/Application\ Support/10Seconds/debug.log
 ```
 
 ## Other commands:
 
 ```shell
-./src/biteducoind -daemon      # Starts the biteducoin daemon.
-./src/biteducoin-cli --help    # Outputs a list of command-line options.
-./src/biteducoin-cli help      # Outputs a list of RPC commands when the daemon is running.
-./src/qt/biteducoin-qt -server # Starts the biteducoin-qt server mode, allows biteducoin-cli control
+./src/10secondsd -daemon      # Starts the 10seconds daemon.
+./src/10seconds-cli --help    # Outputs a list of command-line options.
+./src/10seconds-cli help      # Outputs a list of RPC commands when the daemon is running.
+./src/qt/10seconds-qt -server # Starts the 10seconds-qt server mode, allows 10seconds-cli control
 ```

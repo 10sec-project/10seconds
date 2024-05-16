@@ -1,7 +1,7 @@
 Description
 ------------
 
-This directory contains data-driven tests for various aspects of Biteducoin.
+This directory contains data-driven tests for various aspects of 10Seconds.
 
 License
 --------

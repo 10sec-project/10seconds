@@ -2,13 +2,13 @@
 # Copyright (c) 2015-2021 The Bitcoin Core developers
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
-"""Test biteducoind with different proxy configuration.
+"""Test 10secondsd with different proxy configuration.
 
 Test plan:
-- Start biteducoind's with different proxy configurations
+- Start 10secondsd's with different proxy configurations
 - Use addnode to initiate connections
 - Verify that proxies are connected to, and the right connection command is given
-- Proxy configurations to test on biteducoind side:
+- Proxy configurations to test on 10secondsd side:
     - `-proxy` (proxy everything)
     - `-onion` (proxy just onions)
     - `-proxyrandomize` Circuit randomization

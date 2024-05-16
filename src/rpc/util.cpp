@@ -165,7 +165,7 @@ std::string ShellQuoteIfNeeded(const std::string& s)
 
 std::string HelpExampleCli(const std::string& methodname, const std::string& args)
 {
-    return "> biteducoin-cli " + methodname + " " + args + "\n";
+    return "> 10seconds-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleCliNamed(const std::string& methodname, const RPCArgList& args)

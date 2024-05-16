@@ -46,12 +46,12 @@ static const int TOOLTIP_WRAP_THRESHOLD = 80;
 /* Number of frames in spinner animation */
 #define SPINNER_FRAMES 36
 
-#define QAPP_ORG_NAME "Biteducoin"
-#define QAPP_ORG_DOMAIN "biteducoin.org"
-#define QAPP_APP_NAME_DEFAULT "Biteducoin-Qt"
-#define QAPP_APP_NAME_TESTNET "Biteducoin-Qt-testnet"
-#define QAPP_APP_NAME_SIGNET "Biteducoin-Qt-signet"
-#define QAPP_APP_NAME_REGTEST "Biteducoin-Qt-regtest"
+#define QAPP_ORG_NAME "10Seconds"
+#define QAPP_ORG_DOMAIN "10seconds.org"
+#define QAPP_APP_NAME_DEFAULT "10Seconds-Qt"
+#define QAPP_APP_NAME_TESTNET "10Seconds-Qt-testnet"
+#define QAPP_APP_NAME_SIGNET "10Seconds-Qt-signet"
+#define QAPP_APP_NAME_REGTEST "10Seconds-Qt-regtest"
 
 /* One gigabyte (GB) in bytes */
 static constexpr uint64_t GB_BYTES{1000000000};

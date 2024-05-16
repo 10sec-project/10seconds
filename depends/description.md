@@ -1,4 +1,4 @@
-This is a system of building and caching dependencies necessary for building Biteducoin.
+This is a system of building and caching dependencies necessary for building 10Seconds.
 There are several features that make it different from most similar systems:
 
 ### It is designed to be builder and host agnostic

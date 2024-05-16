@@ -13,7 +13,7 @@ Construct a linear, no-fork, best version of the blockchain.
 
 ### [Qos](/contrib/qos) ###
 
-A Linux bash script that will set up traffic control (tc) to limit the outgoing bandwidth for connections to the Biteducoin network. This means one can have an always-on biteducoind instance running, and another local biteducoind/biteducoin-qt instance which connects to this node and receives blocks from it.
+A Linux bash script that will set up traffic control (tc) to limit the outgoing bandwidth for connections to the 10Seconds network. This means one can have an always-on 10secondsd instance running, and another local 10secondsd/10seconds-qt instance which connects to this node and receives blocks from it.
 
 ### [Seeds](/contrib/seeds) ###
 Utility to generate the pnSeed[] array that is compiled into the client.
@@ -27,7 +27,7 @@ The [Debian](/contrib/debian) subfolder contains the copyright file.
 All other packaging related files can be found in the [bitcoin-core/packaging](https://github.com/bitcoin-core/packaging) repository.
 
 ### [Builder keys](/contrib/builder-keys)
-PGP keys used for signing Biteducoin Core [release](/doc/release-process.md) results.
+PGP keys used for signing 10Seconds Core [release](/doc/release-process.md) results.
 
 ### [MacDeploy](/contrib/macdeploy) ###
 Scripts and notes for Mac builds.
@@ -39,4 +39,4 @@ Test and Verify Tools
 Utilities to generate test vectors for the data-driven Bitcoincoin tests.
 
 ### [Verify Binaries](/contrib/verifybinaries) ###
-This script attempts to download and verify the signature file SHA256SUMS.asc from biteducoin.org.
+This script attempts to download and verify the signature file SHA256SUMS.asc from 10seconds.org.

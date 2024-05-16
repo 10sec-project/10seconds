@@ -20,14 +20,14 @@ See [dependencies.md](dependencies.md) for a complete overview.
 ### 2. Clone Bitcoin Repo
 Clone the Bitcoin Core repository to a directory. All build scripts and commands will run from this directory.
 ``` bash
-git clone https://github.com/biteducoin/biteducoin.git
+git clone https://github.com/10seconds/10seconds.git
 ```
 
 ### 3. Install Optional Dependencies
 
 #### Wallet Dependencies
 
-It is not necessary to build wallet functionality to run either `biteducoind` or `biteducoin-qt`.
+It is not necessary to build wallet functionality to run either `10secondsd` or `10seconds-qt`.
 
 ###### Descriptor Wallet Support
 
@@ -62,7 +62,7 @@ Bitcoin Core includes a GUI built with the cross-platform Qt Framework. To compi
 pkg_add qt5
 ```
 
-## Building Biteducoin Core
+## Building 10Seconds Core
 
 **Important**: Use `gmake` (the non-GNU `make` will exit with an error).
 

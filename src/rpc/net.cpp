@@ -458,7 +458,7 @@ static RPCHelpMan getaddednodeinfo()
                             {
                                 {RPCResult::Type::OBJ, "", "",
                                 {
-                                    {RPCResult::Type::STR, "address", "The biteducoin server IP and port we're connected to"},
+                                    {RPCResult::Type::STR, "address", "The 10seconds server IP and port we're connected to"},
                                     {RPCResult::Type::STR, "connected", "connection, inbound or outbound"},
                                 }},
                             }},

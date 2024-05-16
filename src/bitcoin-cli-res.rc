@@ -14,14 +14,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Biteducoin"
-            VALUE "FileDescription",    "biteducoin-cli (JSON-RPC client for " PACKAGE_NAME ")"
+            VALUE "CompanyName",        "10Seconds"
+            VALUE "FileDescription",    "10seconds-cli (JSON-RPC client for " PACKAGE_NAME ")"
             VALUE "FileVersion",        PACKAGE_VERSION
-            VALUE "InternalName",       "biteducoin-cli"
+            VALUE "InternalName",       "10seconds-cli"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "biteducoin-cli.exe"
-            VALUE "ProductName",        "biteducoin-cli"
+            VALUE "OriginalFilename",   "10seconds-cli.exe"
+            VALUE "ProductName",        "10seconds-cli"
             VALUE "ProductVersion",     PACKAGE_VERSION
         END
     END

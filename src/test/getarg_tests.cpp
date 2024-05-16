@@ -25,7 +25,7 @@ void ResetArgs(ArgsManager& local_args, const std::string& strArg)
     }
 
     // Insert dummy executable name:
-    vecArg.insert(vecArg.begin(), "testbiteducoin");
+    vecArg.insert(vecArg.begin(), "test10seconds");
 
     // Convert to char*:
     std::vector<const char*> vecChar;

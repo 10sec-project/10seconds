@@ -1,6 +1,6 @@
 # Dependencies
 
-These are the dependencies used by Biteducoin Core.
+These are the dependencies used by 10Seconds Core.
 You can find installation instructions in the `build-*.md` file for your platform.
 "Runtime" and "Version Used" are both in reference to the release binaries.
 

@@ -14,14 +14,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "Biteducoin"
-            VALUE "FileDescription",    "biteducoin-tx (CLI Bitcoin transaction editor utility)"
+            VALUE "CompanyName",        "10Seconds"
+            VALUE "FileDescription",    "10seconds-tx (CLI Bitcoin transaction editor utility)"
             VALUE "FileVersion",        PACKAGE_VERSION
-            VALUE "InternalName",       "biteducoin-tx"
+            VALUE "InternalName",       "10seconds-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "biteducoin-tx.exe"
-            VALUE "ProductName",        "biteducoin-tx"
+            VALUE "OriginalFilename",   "10seconds-tx.exe"
+            VALUE "ProductName",        "10seconds-tx"
             VALUE "ProductVersion",     PACKAGE_VERSION
         END
     END

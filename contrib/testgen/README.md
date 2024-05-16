@@ -1,6 +1,6 @@
 ### TestGen ###
 
-Utilities to generate test vectors for the data-driven Biteducoin tests.
+Utilities to generate test vectors for the data-driven 10Seconds tests.
 
 To use inside a scripted-diff (or just execute directly):
 

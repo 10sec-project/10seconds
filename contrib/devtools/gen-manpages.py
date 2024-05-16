@@ -8,12 +8,12 @@ import sys
 import tempfile
 
 BINARIES = [
-'src/biteducoind',
-'src/biteducoin-cli',
-'src/biteducoin-tx',
-'src/biteducoin-wallet',
-'src/biteducoin-util',
-'src/qt/biteducoin-qt',
+'src/10secondsd',
+'src/10seconds-cli',
+'src/10seconds-tx',
+'src/10seconds-wallet',
+'src/10seconds-util',
+'src/qt/10seconds-qt',
 ]
 
 # Paths to external utilities.

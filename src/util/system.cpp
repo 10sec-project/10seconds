@@ -80,7 +80,7 @@
 // Application startup time (used for uptime calculation)
 const int64_t nStartupTime = GetTime();
 
-const char * const BITCOIN_CONF_FILENAME = "biteducoin.conf";
+const char * const BITCOIN_CONF_FILENAME = "10seconds.conf";
 const char * const BITCOIN_SETTINGS_FILENAME = "settings.json";
 
 ArgsManager gArgs;
@@ -837,7 +837,7 @@ static std::string FormatException(const std::exception* pex, std::string_view t
     char pszModule[MAX_PATH] = "";
     GetModuleFileNameA(nullptr, pszModule, sizeof(pszModule));
 #else
-    const char* pszModule = "biteducoin";
+    const char* pszModule = "10seconds";
 #endif
     if (pex)
         return strprintf(
@@ -861,7 +861,7 @@ fs::path GetDefaultDataDir()
     // Unix-like: ~/.bitcoin
 #ifdef WIN32
     // Windows
-    return GetSpecialFolderPath(CSIDL_APPDATA) / "Biteducoin";
+    return GetSpecialFolderPath(CSIDL_APPDATA) / "10Seconds";
 #else
     fs::path pathRet;
     char* pszHome = getenv("HOME");
@@ -871,10 +871,10 @@ fs::path GetDefaultDataDir()
         pathRet = fs::path(pszHome);
 #ifdef MAC_OSX
     // macOS
-    return pathRet / "Library/Application Support/Biteducoin";
+    return pathRet / "Library/Application Support/10Seconds";
 #else
     // Unix-like
-    return pathRet / ".biteducoin";
+    return pathRet / ".10seconds";
 #endif
 #endif
 }

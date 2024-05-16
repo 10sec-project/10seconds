@@ -6,8 +6,8 @@
 """
     ZMQ example using python3's asyncio
 
-    Biteducoin should be started with the command line arguments:
-        biteducoind -testnet -daemon \
+    10Seconds should be started with the command line arguments:
+        10secondsd -testnet -daemon \
                 -zmqpubrawtx=tcp://127.0.0.1:29470 \
                 -zmqpubrawblock=tcp://127.0.0.1:29470 \
                 -zmqpubhashtx=tcp://127.0.0.1:29470 \

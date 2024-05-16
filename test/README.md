@@ -1,4 +1,4 @@
-This directory contains integration tests that test biteducoind and its
+This directory contains integration tests that test 10secondsd and its
 utilities in their entirety. It does not contain unit tests, which
 can be found in [/src/test](/src/test), [/src/wallet/test](/src/wallet/test),
 etc.
@@ -8,9 +8,9 @@ This directory contains the following sets of tests:
 - [fuzz](/test/fuzz) A runner to execute all fuzz targets from
   [/src/test/fuzz](/src/test/fuzz).
 - [functional](/test/functional) which test the functionality of
-biteducoind and biteducoin-qt by interacting with them through the RPC and P2P
+10secondsd and 10seconds-qt by interacting with them through the RPC and P2P
 interfaces.
-- [util](/test/util) which tests the utilities (biteducoin-util, biteducoin-tx, ...).
+- [util](/test/util) which tests the utilities (10seconds-util, 10seconds-tx, ...).
 - [lint](/test/lint/) which perform various static analysis checks.
 
 The util tests are run as part of `make check` target. The fuzz tests, functional
@@ -18,7 +18,7 @@ tests and lint scripts can be run as explained in the sections below.
 
 # Running tests locally
 
-Before tests can be run locally, Biteducoin Core must be built.  See the [building instructions](/doc#building) for help.
+Before tests can be run locally, 10Seconds Core must be built.  See the [building instructions](/doc#building) for help.
 
 ## Fuzz tests
 
@@ -141,29 +141,29 @@ sudo umount /mnt/tmp
 
 ##### Resource contention
 
-The P2P and RPC ports used by the biteducoind nodes-under-test are chosen to make
-conflicts with other processes unlikely. However, if there is another biteducoind
+The P2P and RPC ports used by the 10secondsd nodes-under-test are chosen to make
+conflicts with other processes unlikely. However, if there is another 10secondsd
 process running on the system (perhaps from a previous test which hasn't successfully
-killed all its biteducoind nodes), then there may be a port conflict which will
+killed all its 10secondsd nodes), then there may be a port conflict which will
 cause the test to fail. It is recommended that you run the tests on a system
-where no other biteducoind processes are running.
+where no other 10secondsd processes are running.
 
 On linux, the test framework will warn if there is another
-biteducoind process running when the tests are started.
+10secondsd process running when the tests are started.
 
-If there are zombie biteducoind processes after test failure, you can kill them
+If there are zombie 10secondsd processes after test failure, you can kill them
 by running the following commands. **Note that these commands will kill all
-biteducoind processes running on the system, so should not be used if any non-test
-biteducoind processes are being run.**
+10secondsd processes running on the system, so should not be used if any non-test
+10secondsd processes are being run.**
 
 ```bash
-killall biteducoind
+killall 10secondsd
 ```
 
 or
 
 ```bash
-pkill -9 biteducoind
+pkill -9 10secondsd
 ```
 
 
@@ -174,11 +174,11 @@ functional test is run and is stored in test/cache. This speeds up
 test startup times since new blockchains don't need to be generated for
 each test. However, the cache may get into a bad state, in which case
 tests will fail. If this happens, remove the cache directory (and make
-sure biteducoind processes are stopped as above):
+sure 10secondsd processes are stopped as above):
 
 ```bash
 rm -rf test/cache
-killall biteducoind
+killall 10secondsd
 ```
 
 ##### Test logging
@@ -193,7 +193,7 @@ levels using the logger included in the test_framework, e.g.
 - when run directly, *all* logs are written to `test_framework.log` and INFO
   level and above are output to the console.
 - when run by [our CI (Continuous Integration)](/ci/README.md), no logs are output to the console. However, if a test
-  fails, the `test_framework.log` and biteducoind `debug.log`s will all be dumped
+  fails, the `test_framework.log` and 10secondsd `debug.log`s will all be dumped
   to the console to help troubleshooting.
 
 These log files can be located under the test data directory (which is always
@@ -208,7 +208,7 @@ e.g. `self.nodes[0]`.
 To change the level of logs output to the console, use the `-l` command line
 argument.
 
-`test_framework.log` and biteducoind `debug.log`s can be combined into a single
+`test_framework.log` and 10secondsd `debug.log`s can be combined into a single
 aggregate log by running the `combine_logs.py` script. The output can be plain
 text, colorized text or html. For example:
 
@@ -235,9 +235,9 @@ import pdb; pdb.set_trace()
 ```
 
 anywhere in the test. You will then be able to inspect variables, as well as
-call methods that interact with the biteducoind nodes-under-test.
+call methods that interact with the 10secondsd nodes-under-test.
 
-If further introspection of the biteducoind instances themselves becomes
+If further introspection of the 10secondsd instances themselves becomes
 necessary, this can be accomplished by first setting a pdb breakpoint
 at an appropriate location, running the test to that point, then using
 `gdb` (or `lldb` on macOS) to attach to the process and debug.
@@ -260,13 +260,13 @@ test run:
 Use the path to find the pid file in the temp folder:
 
 ```bash
-cat /tmp/user/1000/testo9vsdjo3/node1/regtest/biteducoind.pid
+cat /tmp/user/1000/testo9vsdjo3/node1/regtest/10secondsd.pid
 ```
 
 Then you can use the pid to start `gdb`:
 
 ```bash
-gdb /home/example/biteducoind <pid>
+gdb /home/example/10secondsd <pid>
 ```
 
 Note: gdb attach step may require ptrace_scope to be modified, or `sudo` preceding the `gdb`.

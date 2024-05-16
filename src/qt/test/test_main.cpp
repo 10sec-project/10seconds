@@ -82,7 +82,7 @@ int main(int argc, char* argv[])
     // Don't remove this, it's needed to access
     // QApplication:: and QCoreApplication:: in the tests
     BitcoinApplication app;
-    app.setApplicationName("Biteducoin-Qt-test");
+    app.setApplicationName("10Seconds-Qt-test");
     app.createNode(*init);
 
     int num_test_failures{0};
