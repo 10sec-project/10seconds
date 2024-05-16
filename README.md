@@ -1,4 +1,4 @@
-Bitcoin Core source tree
+10Seconds Core source tree
 =====================================
 
 https://github.com/10seconds/10seconds.git
