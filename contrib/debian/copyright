@@ -2,7 +2,7 @@ Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: 10Seconds
 Upstream-Contact: Satoshi Nakamoto <satoshin@gmx.com>
  irc://#bitcoin-core-dev@libera.chat
-Source: https://github.com/10seconds/10seconds
+Source: https://github.com/10sec-project/10seconds
 
 Files: *
 Copyright: 2024, 10Seconds Core Developers

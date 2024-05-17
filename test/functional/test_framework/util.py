@@ -44,11 +44,11 @@ def assert_fee_amount(fee, tx_size, feerate_BTC_kvB):
     assert isinstance(tx_size, int)
     target_fee = get_fee(tx_size, feerate_BTC_kvB)
     if fee < target_fee:
-        raise AssertionError("Fee of %s 10SEC too low! (Should be %s 10SEC)" % (str(fee), str(target_fee)))
+        raise AssertionError("Fee of %s TSEC too low! (Should be %s TSEC)" % (str(fee), str(target_fee)))
     # allow the wallet's estimation to be at most 2 bytes off
     high_fee = get_fee(tx_size + 2, feerate_BTC_kvB)
     if fee > high_fee:
-        raise AssertionError("Fee of %s 10SEC too high! (Should be %s 10SEC)" % (str(fee), str(target_fee)))
+        raise AssertionError("Fee of %s TSEC too high! (Should be %s TSEC)" % (str(fee), str(target_fee)))
 
 
 def assert_equal(thing1, thing2, *args):

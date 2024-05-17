@@ -165,7 +165,7 @@
 #define HAVE_SYS_TYPES_H 1
 
 /* Define to the address where bug reports for this package should be sent. */
-#define PACKAGE_BUGREPORT "https://github.com/10seconds/10seconds/issues"
+#define PACKAGE_BUGREPORT "https://github.com/10sec-project/10seconds/issues"
 
 /* Define to the full name of this package. */
 #define PACKAGE_NAME "10Seconds"

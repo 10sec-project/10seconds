@@ -42,7 +42,7 @@ If you want to build the windows installer with `make deploy` you need [NSIS](ht
 
 Acquire the source in the usual way:
 
-    git clone https://github.com/10seconds/10seconds.git
+    git clone https://github.com/10sec-project/10seconds.git
     cd 10seconds
 
 ## Building for 64-bit Windows

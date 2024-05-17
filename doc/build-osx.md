@@ -58,7 +58,7 @@ Now that all the required dependencies are installed, let's clone the Bitcoin Co
 All build scripts and commands will run from this directory.
 
 ``` bash
-git clone https://github.com/10seconds/10seconds.git
+git clone https://github.com/10sec-project/10seconds.git
 ```
 
 ### 5. Install Optional Dependencies

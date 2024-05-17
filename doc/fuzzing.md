@@ -5,7 +5,7 @@
 To quickly get started fuzzing 10Seconds Core using [libFuzzer](https://llvm.org/docs/LibFuzzer.html):
 
 ```sh
-$ git clone https://github.com/10seconds/10seconds
+$ git clone https://github.com/10sec-project/10seconds
 $ cd 10seconds/
 $ ./autogen.sh
 $ CC=clang CXX=clang++ ./configure --enable-fuzz --with-sanitizers=address,fuzzer,undefined
@@ -207,7 +207,7 @@ To quickly get started fuzzing the P2P layer using Honggfuzz NetDriver:
 ```sh
 $ mkdir bitcoin-honggfuzz-p2p/
 $ cd bitcoin-honggfuzz-p2p/
-$ git clone https://github.com/10seconds/10seconds
+$ git clone https://github.com/10sec-project/10seconds
 $ cd 10seconds/
 $ ./autogen.sh
 $ git clone https://github.com/google/honggfuzz
@@ -274,7 +274,7 @@ $ honggfuzz/honggfuzz --exit_upon_crash --quiet --timeout 4 -n 1 -Q \
 To quickly get started fuzzing 10Seconds Core using [Eclipser v1.x](https://github.com/SoftSec-KAIST/Eclipser/tree/v1.x):
 
 ```sh
-$ git clone https://github.com/10seconds/10seconds
+$ git clone https://github.com/10sec-project/10seconds
 $ cd 10seconds/
 $ sudo vim /etc/apt/sources.list # Uncomment the lines starting with 'deb-src'.
 $ sudo apt-get update
