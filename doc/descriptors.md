@@ -1,6 +1,6 @@
 # Support for Output Descriptors in 10Seconds Core
 
-Since 10Seconds Core v24.2.0, there is support for Output Descriptors. This is a
+Since 10Seconds Core v10.0.0, there is support for Output Descriptors. This is a
 simple language which can be used to describe collections of output scripts.
 Supporting RPCs are:
 - `scantxoutset` takes as input descriptors to scan for, and also reports
