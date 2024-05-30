@@ -64,6 +64,8 @@
 #include <optional>
 #include <string>
 
+#include <cmath>
+
 using kernel::CCoinsStats;
 using kernel::CoinStatsHashType;
 using kernel::ComputeUTXOStats;
@@ -1477,14 +1479,17 @@ CAmount GetBlockSubsidy(int nHeight, const Consensus::Params& consensusParams)
     if (halvings >= 64)
         return 0;
 
-    CAmount nSubsidy = 50 * COIN;
-    if (nHeight<63001)
-    return 12.5 * COIN;
-    if (nHeight>63000)
-    return 1.6 * COIN;
     // Subsidy is cut in half every 6,300,000 blocks which will occur approximately every 2 years.
-    nSubsidy >>= halvings;
-    return nSubsidy;
+    CAmount nSubsidy = 50 * COIN;
+    if (nHeight > 6300000 * halvings && nHeight < (6300000 * (halvings + 1)) + 1) {
+        double n = static_cast<double>(halvings);
+        double result = 1.6 * pow(0.5, n);
+        return static_cast<CAmount>(result * COIN);
+    }
+    else {
+        nSubsidy >>= halvings;
+        return nSubsidy;
+    }
 }
 
 CoinsViews::CoinsViews(
