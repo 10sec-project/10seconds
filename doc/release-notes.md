@@ -1,7 +1,7 @@
 10.0.0 Release Notes
 ====================
 
-Bitcoin Core version 24.2 is now available from:
+10Seconds Core version 10.0.0 is now available from:
 
   <https://github.com/10sec-project/10seconds>
 
@@ -39,19 +39,19 @@ unsupported systems.
 
 ### Fees()
 
-- 
+- See also release-notes-24.2.md
 
 ### RPC and other APIs
 
-- 
+- See also release-notes-24.2.md
 
 ### Build System
 
-- 
+- See also release-notes-24.2.md
 
 ### CI
 
-- 
+- See also release-notes-24.2.md
 
 ### Miscellaneous
 
@@ -62,7 +62,7 @@ Credits
 
 Thanks to everyone who directly contributed to this release:
 
-- 
+- See also release-notes-24.2.md
 
 As well as to everyone that helped with translations on
 [Transifex](https://www.transifex.com/bitcoin/bitcoin/).
