@@ -55,7 +55,7 @@ unsupported systems.
 
 ### Miscellaneous
 
-- 
+- See also release-notes-24.2.md
 
 Credits
 =======
