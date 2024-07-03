@@ -34,10 +34,10 @@ BOOST_FIXTURE_TEST_SUITE(pow_tests, BasicTestingSetup)
 BOOST_AUTO_TEST_CASE(get_next_work_pow_limit)
 {
     const auto chainParams = CreateChainParams(*m_node.args, CBaseChainParams::MAIN);
-    int64_t nLastRetargetTime = 1718000085; // Block #0
+    int64_t nLastRetargetTime = 1720842645; // Block #0
     CBlockIndex pindexLast;
     pindexLast.nHeight = 1079;
-    pindexLast.nTime = 1718010875;  // Block #1079
+    pindexLast.nTime = 1720853435;  // Block #1079
     pindexLast.nBits = 0x1e01ffff;
     unsigned int expected_nbits = 0x1e01ffffU;
     BOOST_CHECK_EQUAL(CalculateNextWorkRequired(&pindexLast, nLastRetargetTime, chainParams->GetConsensus()), expected_nbits);
